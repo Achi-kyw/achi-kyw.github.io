@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>題解 on Achi-kyw的札記</title>
+    <link>https://achi-kyw.github.io/categories/%E9%A1%8C%E8%A7%A3/</link>
+    <description>Recent content in 題解 on Achi-kyw的札記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 10 Oct 2022 19:30:00 +0800</lastBuildDate><atom:link href="https://achi-kyw.github.io/categories/%E9%A1%8C%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TIOJ 1687 樹上詢問 題解</title>
+      <link>https://achi-kyw.github.io/posts/2022/10/tioj-1687-%E6%A8%B9%E4%B8%8A%E8%A9%A2%E5%95%8F-%E9%A1%8C%E8%A7%A3/</link>
+      <pubDate>Mon, 10 Oct 2022 19:30:00 +0800</pubDate>
+      
+      <guid>https://achi-kyw.github.io/posts/2022/10/tioj-1687-%E6%A8%B9%E4%B8%8A%E8%A9%A2%E5%95%8F-%E9%A1%8C%E8%A7%A3/</guid>
+      <description>第一篇文先把高中的資訊作業偷過來，所以這個文體可能比較正式一點。
+題目連結
+題解 LCA 這題是經典的樹上的LCA(Lowest Common Ancester，最近共同祖先)，可以用在生物等層面，如尋找兩生物親緣關係，若LCA距離較近，代表親緣關係也較近。LCA也有許多處理方式，如以下：
+暴力解：先對整棵樹DFS(深度優先搜尋)之後紀錄每個點的深度及父節點。對於查詢的點\(A\),\(B\)，先把較深的點向上爬到和另一個點一樣深之後，再一起向上爬，直到爬到兩者相同。時間複雜度：預處理\(\mathcal{O}(N)\)，查詢複雜度\(\mathcal{O}(QN)\)，本題若使用暴力會超時（Time Limit Exceeded, TLE），且實作較麻煩。
+樹壓平取LCA：先對數歐拉遍歷後，對於遍歷完的深度序列進行RMQ(區間最小值查詢)。時間複雜度：預處理\(\mathcal{O}(N)\)，查詢複雜度\(\mathcal{O}(Q \log N)\)，不會TLE。
+Doubling 倍增法：我在寫本題使用的方法，寫起來較為方便，預處理方式與暴力解幾乎相同，除了記錄深度及父節點之外，也要記錄該節點的\(2^i(0 \leq i \leq \log N)\)倍祖先，如以下式（\(pa[p]\)代表\(p\)點的父節點，\(anc[p][i]\)代表\(p\)點的\(2^i\)倍祖先）：
+$$anc[p][i] = \begin{cases} -1, \ p\ is\ root \\ pa[p], \ i=0 \\ anc[anc[p][i-1]][i-1], \ otherwise \end{cases}$$
+以上式子可以在\(\mathcal{O}(N \log N)\)之內跑完，之後在詢問時同樣檢查兩個節點的深度，計算出兩者的深度差，再將較深者每次上升深度差轉成二進位後每一位所代表的二的冪次。如以下程式碼（a代表較淺的點，b則是較深的點），時間複雜度為\(\mathcal{O}(\log N)\)：
+x=0;for(int i=dep[b]-dep[a];i&amp;gt;0;i/=2){if(i%2) b=anc[b][x];x++;} 接下來，假設兩者的第\(t\)輩祖先即是LCA，我們可以透過二分搜 找出這個\(t\)。處理的時候\(i\)由大到小處理（\(i\)代表二的冪次）代表如果發現\(2^i\)輩祖先不同，就將兩者換為原本的第\(2^i\)輩祖先，時間複雜度為\(\mathcal{O}(\log N)\)，如以下程式碼（MAXLOG代表\(\lceil \log_2 N \rceil\)）：
+for(int i=MAXLOG-1;i&amp;gt;=0;i--){if(anc[a][i]!=anc[b][i]){a=anc[a][i];b=anc[b][i];}}lca=anc[a][0]; 而本題所求為a點到b點所經過最短距離中從a點走\(K\)步的距離，處理時先判斷走\(K\)步是否有超過兩者的LCA，再同樣以類似上面爬到同深度的方法找出該步所在的點。
+此外，還有如Tarjan&amp;rsquo;s Algorithm、Heavy-Light Decomposition 等等方法可以解決LCA問題。
+心得 以上內容我在網路上尋找相關資料，以及參考學長的講義之後，經歷過多次的debug，也是我少數在非競賽中上傳次數超過十次的題目。一開始寫好的程式在多次的MLE及WA中，每次都找出我一個漏洞，這些問題有大有小，但都足以影響結果。這也是寫題目必經的過程，期許不久後的我能更強。（結果自己反而變爛了QQ）</description>
+    </item>
+    
+  </channel>
+</rss>
