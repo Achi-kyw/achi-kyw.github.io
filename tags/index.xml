@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Achi-kyw的札記</title>
+    <title>Tags on Achi_kyw的札記</title>
     <link>https://achi-kyw.github.io/tags/</link>
-    <description>Recent content in Tags on Achi-kyw的札記</description>
+    <description>Recent content in Tags on Achi_kyw的札記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 10 Oct 2022 19:30:00 +0800</lastBuildDate><atom:link href="https://achi-kyw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 19:39:00 +0800</lastBuildDate><atom:link href="https://achi-kyw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修課心得</title>
+      <link>https://achi-kyw.github.io/tags/%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Mon, 02 Jan 2023 19:39:00 +0800</pubDate>
+      
+      <guid>https://achi-kyw.github.io/tags/%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>LCA</title>
       <link>https://achi-kyw.github.io/tags/lca/</link>
