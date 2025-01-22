@@ -4,32 +4,17 @@
     <title>題解 on Achi_kyw的札記</title>
     <link>https://achi-kyw.github.io/categories/%E9%A1%8C%E8%A7%A3/</link>
     <description>Recent content in 題解 on Achi_kyw的札記</description>
-<<<<<<< HEAD
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 10 Oct 2022 19:30:00 +0800</lastBuildDate><atom:link href="https://achi-kyw.github.io/categories/%E9%A1%8C%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
-=======
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 10 Oct 2022 19:30:00 +0800</lastBuildDate>
     <atom:link href="https://achi-kyw.github.io/categories/%E9%A1%8C%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> da04dd5 (add 113-1)
     <item>
       <title>TIOJ 1687 樹上詢問 題解</title>
       <link>https://achi-kyw.github.io/posts/2022/10/tioj-1687-%E6%A8%B9%E4%B8%8A%E8%A9%A2%E5%95%8F-%E9%A1%8C%E8%A7%A3/</link>
       <pubDate>Mon, 10 Oct 2022 19:30:00 +0800</pubDate>
-<<<<<<< HEAD
-      
-      <guid>https://achi-kyw.github.io/posts/2022/10/tioj-1687-%E6%A8%B9%E4%B8%8A%E8%A9%A2%E5%95%8F-%E9%A1%8C%E8%A7%A3/</guid>
-      <description>第一篇文先把高中的資訊作業偷過來，所以這個文體可能比較正式一點。 題目連結 題解 LCA 這題是經典的樹上的LCA(Lowest Common Ancester，最近</description>
-    </item>
-    
-=======
       <guid>https://achi-kyw.github.io/posts/2022/10/tioj-1687-%E6%A8%B9%E4%B8%8A%E8%A9%A2%E5%95%8F-%E9%A1%8C%E8%A7%A3/</guid>
       <description>&lt;p&gt;第一篇文先把高中的資訊作業偷過來，所以這個文體可能比較正式一點。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tioj.ck.tp.edu.tw/problems/1687&#34;&gt;題目連結&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;題解&#34;&gt;題解&lt;/h2&gt;&#xA;&lt;h3 id=&#34;lca&#34;&gt;LCA&lt;/h3&gt;&#xA;&lt;p&gt;這題是經典的樹上的LCA(Lowest Common Ancester，最近共同祖先)，可以用在生物等層面，如尋找兩生物親緣關係，若LCA距離較近，代表親緣關係也較近。LCA也有許多處理方式，如以下：&lt;/p&gt;</description>
     </item>
->>>>>>> da04dd5 (add 113-1)
   </channel>
 </rss>
