@@ -4,6 +4,7 @@
     <title>Tags on Achi_kyw的札記</title>
     <link>https://achi-kyw.github.io/tags/</link>
     <description>Recent content in Tags on Achi_kyw的札記</description>
+<<<<<<< HEAD
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
@@ -44,23 +45,77 @@
       <description></description>
     </item>
     
+=======
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 22 Jan 2025 22:50:00 +0800</lastBuildDate>
+    <atom:link href="https://achi-kyw.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修課心得</title>
+      <link>https://achi-kyw.github.io/tags/%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Wed, 22 Jan 2025 22:50:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/tags/%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>區間車系列</title>
+      <link>https://achi-kyw.github.io/tags/%E5%8D%80%E9%96%93%E8%BB%8A%E7%B3%BB%E5%88%97/</link>
+      <pubDate>Fri, 16 Feb 2024 23:10:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/tags/%E5%8D%80%E9%96%93%E8%BB%8A%E7%B3%BB%E5%88%97/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>遊記</title>
+      <link>https://achi-kyw.github.io/tags/%E9%81%8A%E8%A8%98/</link>
+      <pubDate>Fri, 16 Feb 2024 23:10:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/tags/%E9%81%8A%E8%A8%98/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>環島</title>
+      <link>https://achi-kyw.github.io/tags/%E7%92%B0%E5%B3%B6/</link>
+      <pubDate>Thu, 15 Feb 2024 22:14:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/tags/%E7%92%B0%E5%B3%B6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2024寒假日本</title>
+      <link>https://achi-kyw.github.io/tags/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC/</link>
+      <pubDate>Thu, 15 Feb 2024 21:49:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/tags/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+>>>>>>> da04dd5 (add 113-1)
     <item>
       <title>LCA</title>
       <link>https://achi-kyw.github.io/tags/lca/</link>
       <pubDate>Mon, 10 Oct 2022 19:30:00 +0800</pubDate>
+<<<<<<< HEAD
       
       <guid>https://achi-kyw.github.io/tags/lca/</guid>
       <description></description>
     </item>
     
+=======
+      <guid>https://achi-kyw.github.io/tags/lca/</guid>
+      <description></description>
+    </item>
+>>>>>>> da04dd5 (add 113-1)
     <item>
       <title>TIOJ</title>
       <link>https://achi-kyw.github.io/tags/tioj/</link>
       <pubDate>Mon, 10 Oct 2022 19:30:00 +0800</pubDate>
+<<<<<<< HEAD
       
       <guid>https://achi-kyw.github.io/tags/tioj/</guid>
       <description></description>
     </item>
     
+=======
+      <guid>https://achi-kyw.github.io/tags/tioj/</guid>
+      <description></description>
+    </item>
+>>>>>>> da04dd5 (add 113-1)
   </channel>
 </rss>
