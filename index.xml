@@ -17,6 +17,13 @@
       <description>&lt;p&gt;先說明一下，我在這裡使用的手機分別是 Pixel 6 以及 Pixel 10，另外安裝的步驟均參考&lt;a href=&#34;https://www.mobile01.com/topicdetail.php?f=565&amp;amp;t=7164410&#34;&gt;這篇文章&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Android 使用者可能會很羨慕 iPhone 使用者到日本可以直接刷交通卡，而我們還是需要掏出實體卡，在旅行中拖著大包小包還要從包包挖出卡片稍嫌麻煩。這是因為日本的交通卡採用的是 felica 技術，通常只有日本版的手機才有辦法啟用。而 iPhone 跟 Pixel 是目前唯二在全球發行的手機都有相關硬體設備，但是 iPhone 並沒有對此設下太多限制，Pixel 則是以韌體版本判斷機種是否為日本版進行啟用。總之如果想要在台灣能夠用悠遊付嗶乘車，在日本同時能刷 suica 的話就是只有 Pixel 做得到。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>關於我</title>
+      <link>https://achi-kyw.github.io/about/</link>
+      <pubDate>Sat, 13 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://achi-kyw.github.io/about/</guid>
+      <description>&lt;h2 id=&#34;關於achi_kyw&#34;&gt;關於Achi_kyw&lt;/h2&gt;&#xA;&lt;p&gt;大家好，我是&lt;code&gt;Achi_kyw&lt;/code&gt;，現在正在尋找生存的意義，有點漂泊不定，希望有一天能找到出口。&lt;/p&gt;&#xA;&lt;p&gt;常用ID是&lt;code&gt;Achi_kyw&lt;/code&gt;，官方提供的標準念法是[ɑtʃikju]，不過已經存在各種念法了。&lt;code&gt;A&lt;/code&gt;大多數情況下是大寫，少數情況小寫。不過github還有hackmd不給用底線，所以改成&lt;code&gt;achi-kyw&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>台大資工 113 學年度第二學期修課回顧</title>
       <link>https://achi-kyw.github.io/posts/2025/07/%E5%8F%B0%E5%A4%A7%E8%B3%87%E5%B7%A5-113-%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%AC%AC%E4%BA%8C%E5%AD%B8%E6%9C%9F%E4%BF%AE%E8%AA%B2%E5%9B%9E%E9%A1%A7/</link>
       <pubDate>Tue, 01 Jul 2025 23:43:00 +0800</pubDate>
@@ -71,13 +78,6 @@
       <pubDate>Sun, 04 Feb 2024 22:32:00 +0800</pubDate>
       <guid>https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%BA%8C%E7%AF%87%E9%87%91%E6%BE%A4%E5%AF%8C%E5%B1%B1%E7%A6%8F%E4%BA%95/</guid>
       <description>&lt;p&gt;整個行程總共有四篇，為了內容連貫性及完整性，篇幅不會均等，主要是以地點而非日期分段。&lt;/p&gt;&#xA;&lt;p&gt;所有文章請參考標籤 &lt;a href=&#34;https://achi-kyw.github.io/tags/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC/&#34;&gt;2024寒假日本&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%B8%80%E7%AF%87%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%B8%8B%E5%91%82%E9%AB%98%E5%B1%B1%E7%99%BD%E5%B7%9D%E9%84%89/&#34;&gt;第一篇：名古屋、下呂、高山、白川鄉 Day 1-4&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;第二篇：金澤、富山、福井 Day 4-5&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%B8%89%E7%AF%87%E4%BA%AC%E9%83%BD%E5%A4%A7%E6%B4%A5%E5%AE%87%E6%B2%BB%E5%A4%A7%E9%98%AA/&#34;&gt;第三篇：京都、大津、宇治、大阪 Day 6-9&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E5%9B%9B%E7%AF%87%E9%96%80%E5%8F%B8%E4%B8%8B%E9%97%9C%E5%B0%8F%E5%80%89%E7%A6%8F%E5%B2%A1%E5%A4%AA%E5%AE%B0%E5%BA%9C/&#34;&gt;第四篇：門司、下關、小倉、福岡、太宰府 Day 10-11&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;行程規劃&#34;&gt;行程規劃&lt;/h2&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%BA%8C%E7%AF%87%E9%87%91%E6%BE%A4%E5%AF%8C%E5%B1%B1%E7%A6%8F%E4%BA%95/route_map.png&#34;&#xA;    alt=&#34;大致的行程規劃，借一下導遊的圖&#34; width=&#34;100%&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;p&gt;大致的行程規劃，借一下導遊的圖&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2024寒假日本遊第一篇：名古屋、下呂、高山、白川鄉</title>
-      <link>https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%B8%80%E7%AF%87%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%B8%8B%E5%91%82%E9%AB%98%E5%B1%B1%E7%99%BD%E5%B7%9D%E9%84%89/</link>
-      <pubDate>Thu, 01 Feb 2024 00:10:00 +0800</pubDate>
-      <guid>https://achi-kyw.github.io/posts/2024/02/2024%E5%AF%92%E5%81%87%E6%97%A5%E6%9C%AC%E9%81%8A%E7%AC%AC%E4%B8%80%E7%AF%87%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%B8%8B%E5%91%82%E9%AB%98%E5%B1%B1%E7%99%BD%E5%B7%9D%E9%84%89/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;高中的海外旅行因為疫情取消成為一大遺憾，這次能夠湊到高中班上17個人一起去日本玩，也是蠻扯的，也感謝導遊無私提供家裡空間、幫我們安排好飯店跟規劃不少行程。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
