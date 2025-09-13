@@ -7,13 +7,13 @@
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 01 Jul 2025 23:43:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Sep 2025 15:20:00 +0800</lastBuildDate>
     <atom:link href="https://achi-kyw.github.io/tags/%E6%89%8B%E6%A9%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Pixel 手機安裝 SUICA 個人經驗紀錄</title>
-      <link>https://achi-kyw.github.io/posts/2025/07/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/</link>
-      <pubDate>Tue, 01 Jul 2025 23:43:00 +0800</pubDate>
-      <guid>https://achi-kyw.github.io/posts/2025/07/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/</guid>
+      <link>https://achi-kyw.github.io/posts/2025/09/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/</link>
+      <pubDate>Sat, 13 Sep 2025 15:20:00 +0800</pubDate>
+      <guid>https://achi-kyw.github.io/posts/2025/09/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/</guid>
       <description>&lt;p&gt;先說明一下，我在這裡使用的手機分別是 Pixel 6 以及 Pixel 10，另外安裝的步驟均參考&lt;a href=&#34;https://www.mobile01.com/topicdetail.php?f=565&amp;amp;t=7164410&#34;&gt;這篇文章&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Android 使用者可能會很羨慕 iPhone 使用者到日本可以直接刷交通卡，而我們還是需要掏出實體卡，在旅行中拖著大包小包還要從包包挖出卡片稍嫌麻煩。這是因為日本的交通卡採用的是 felica 技術，通常只有日本版的手機才有辦法啟用。而 iPhone 跟 Pixel 是目前唯二在全球發行的手機都有相關硬體設備，但是 iPhone 並沒有對此設下太多限制，Pixel 則是以韌體版本判斷機種是否為日本版進行啟用。總之如果想要在台灣能夠用悠遊付嗶乘車，在日本同時能刷 suica 的話就是只有 Pixel 做得到。&lt;/p&gt;</description>
     </item>
   </channel>
