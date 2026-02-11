@@ -23,7 +23,7 @@
 
 
 
-  <link rel="stylesheet" href="https://achi-kyw.github.io/main.min.244183cde1a38e0b08f82c11791181288f9aac1cc9618cd6f4e9e7710c5768ba.css" integrity="sha256-JEGDzeGjjgsI&#43;CwReRGBKI&#43;arBzJYYzW9OnncQxXaLo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://achi-kyw.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
 
 
 
@@ -43,9 +43,9 @@
   <meta itemprop="description" content="在 Pixel 手機安裝 SUICA 個人經驗紀錄">
   <meta itemprop="datePublished" content="2025-09-13T15:20:00+08:00">
   <meta itemprop="dateModified" content="2025-09-13T15:20:00+08:00">
-  <meta itemprop="wordCount" content="2708">
+  <meta itemprop="wordCount" content="4373">
   <meta itemprop="image" content="https://achi-kyw.github.io/">
-  <meta itemprop="keywords" content="Pixel,SUICA,Felica">
+  <meta itemprop="keywords" content="Pixel,SUICA,Felica,ICOCA,PASMO">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://achi-kyw.github.io/">
@@ -87,7 +87,7 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRMWMZ87JM"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -153,7 +153,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        6分鐘
+        9分鐘
 
         
       </p>
@@ -173,7 +173,8 @@
       
 
       <div class="post-content">
-        <p>先說明一下，我在這裡使用的手機分別是 Pixel 6 以及 Pixel 10，另外安裝的步驟均參考<a href="https://www.mobile01.com/topicdetail.php?f=565&amp;t=7164410">這篇文章</a></p>
+        <p>*2026/2 更新在日本實測的一些細節</p>
+<p>先說明一下，我在這裡使用的手機分別是 Pixel 6 以及 Pixel 10，另外安裝的步驟均參考<a href="https://www.mobile01.com/topicdetail.php?f=565&amp;t=7164410">這篇文章</a></p>
 <p>Android 使用者可能會很羨慕 iPhone 使用者到日本可以直接刷交通卡，而我們還是需要掏出實體卡，在旅行中拖著大包小包還要從包包挖出卡片稍嫌麻煩。這是因為日本的交通卡採用的是 felica 技術，通常只有日本版的手機才有辦法啟用。而 iPhone 跟 Pixel 是目前唯二在全球發行的手機都有相關硬體設備，但是 iPhone 並沒有對此設下太多限制，Pixel 則是以韌體版本判斷機種是否為日本版進行啟用。總之如果想要在台灣能夠用悠遊付嗶乘車，在日本同時能刷 suica 的話就是只有 Pixel 做得到。</p>
 <p>能夠讓非日版 Pixel 啟用 felica 的程序有兩種，這兩種方法都無可避免需要重置手機，因此都需要預先備份資料。</p>
 <ol>
@@ -230,6 +231,21 @@
 <p><img src="https://achi-kyw.github.io/posts/2025/09/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/wallet4.png" alt=""></p>
 <p>重新刷回鎖上，依循一樣的方法設定就可以了。</p>
 <p><img src="https://achi-kyw.github.io/posts/2025/09/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84/wallet5.png" alt=""></p>
+<h1 id="當地實測">當地實測</h1>
+<p>我到當地帶了兩隻裝置，分別是 unroot 過後的 Pixel 10，內有從 Google 錢包啟用的 SUICA 和 PASMO 綁在臺灣 Google 帳戶下，以及 root 狀態下的 Pixel 6 從 Osaifu-Keitai 啟用的 ICOCA 一張。另外也有測試啟用其他幾張電子貨幣，但沒有實際使用，以下這些應該是都可以現金儲值的，我並沒有實測。</p>
+<ul>
+<li>WAON: 無法使用海外任何卡儲值，辦帳號需要日本手機號碼驗證。但可以透過 Google 錢包啟用。</li>
+<li>nanaco: 開帳號不需日本手機號碼驗證，但是官方本來就公告只能使用特定幾張日本信用卡儲值。</li>
+<li>樂天 Edy: 開帳號日本手機號碼驗證，啟用本身需要有日本 IP 不然無法使用。在日本 IP 下似乎可以使用海外信用卡，但我沒有實測。</li>
+</ul>
+<p>接著是三張交通卡。除了信用卡儲值之外也可以現金儲值，但是因為大多數的儲值機台都是要把卡插進去的，只有少數幾台是用放的才能把手機放進去儲值。這些機台大多是在超商內（不是每間都有）或是車站閘內的精算機那裡才會有，車站外面的機器通常都是要插入的。</p>
+<h2 id="icoca">ICOCA</h2>
+<p>這張是問題最少的，唯一的缺點就是不能用 Google Wallet 開啟並切換。啟用需要透過 Mobile ICOCA 啟用，要有一個 WESTER 帳號（不需要日本手機號碼驗證）。儲值也只能透過 Mobile ICOCA 。開卡強制要儲值 1000，之後可以以 1 日元為單位儲值，最少 500。卡片的話應該是沒有特別擋海外卡，雖然我只綁了玉山銀行的 JCB 實測儲值是可以的。（Mobile ICOCA app 我似乎沒有找到可以換信用卡的選項）這張並沒有另外兩張卡有一些有的沒有的限制，也可以累積 WESTER 的點數，問題只有使用了這張卡在 unroot 狀態下是沒辦法切去使用其他張卡的，或著說切走了之後沒辦法切回來。如果你不介意沒有 Google 錢包的介面而且你也覺得你不需要去切換成另外兩張卡的話會建議就啟用 ICOCA 就好（當然你也可以乾脆維持在 root）。有個題外話是我似乎不小心讓我 root 的 Pixel 6 去系統更新了所以現在又變回 unroot 沒辦法開 osaifu-keitai 了。還有這隻手機我沒有裝 sim 卡，沒有網路的狀態下是不能儲值的，連打開 app 查看餘額都不行，就跟一張實體卡一樣。</p>
+<h2 id="pasmo">PASMO</h2>
+<p>這張最大的問題是不能使用海外信用卡儲值，不過有個例外情況：當在日本時（不確定是否也需要手機是裝日本 sim 卡），可以透過 Mobile PASMO app 裡面綁定海外的 Mastercard 來儲值（我是台新銀行的卡）。首先 Google 錢包那裡本來就會限制海外卡不能儲值，Mobile PASMO 只要是海外信用卡的 JCB/VISA 等等都是沒辦法綁定的，Mastercard 在地區不是日本的情況下是可以綁定，但到了儲值那一步就會失敗，僅有在日本時可以成功儲值。有在台灣試過啟用日本原生的 esim 加上開日本 VPN 仍然會儲值失敗，所以大概只有真的在日本才可以（但我也沒有給這個 app 定位權限，不知道實際判定方法還有什麼）。至於 sim 卡是不是需要是日本的我就不是很確定了。另外 Mobile PASMO 儲值的限制是只能儲他指定的金額 500/1000/2000 等等。另外這張可以透過 Google 錢包裡面跟 SUICA 切成主卡。在非主卡下仍然可以用 Mobile PASMO 儲值（反之亦然），我這次多次切換都沒有什麼太大的問題，不過我沒有另外測斷網狀態下切換會發生什麼事。</p>
+<h2 id="suica">SUICA</h2>
+<p>這張真是讓人又愛又恨，首先他是 Google 錢包可以啟用的所以可以看到精美的扣款動畫，也是可以透過 Google 錢包或是 Mobile SUICA 使用海外的 JCB 儲值，但是最大的問題就是<strong>信用卡儲值上限</strong>。這是個 JR 東日本聲稱為了防止不當使用做出的限制，使用信用卡儲值只能儲個一定的金額就沒辦法繼續儲值，也沒有說這個限制是多少，官方的說法是多去購買商品或是搭乘交通工具就可以繼續儲值了，但實測是次數多少似乎都沒什麼用。這個問題是日本人自己也會碰到的問題，網路上也有一些討論。而蘋果手機透過 Apple Pay 儲值不會有這個問題。也有人實測一開始是 30 天內最多只能用信用卡儲值大約 3000 ，我分了好幾個月儲值了 8000 之後就儲不動了，之後過 30 天可能可以再測試一下。解決方法日本網友提供的包含寫信（似乎很容易被拒絕）、啟用自動儲值（海外信用卡似乎沒辦法）、使用 JRE Point 儲值（大概只能小補），或是轉到另外一隻 iPhone 用 Apple Pay 儲值再轉回來（那不是乾脆直接用 iPhone 就好了？）偏偏有一個東西只能用 SUICA，就是 JR 東日本管區內的 Green car 券的購買，要透過 Mobile SUICA 裡面買，不過這裡就是直接刷信用卡購買而不是扣裡面的款項。</p>
+<p>總之海外的 Android 要啟用這些真的是很麻煩，可能倒不如直接買個 iPhone 備用機來用，畢竟很多間銀行的日本交通卡儲值優惠還是限制用 Apple Pay 才領得到。</p>
 
       </div>
     </article>
@@ -262,7 +278,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2708字
+        4373字
       </p>
 
       <p>
@@ -381,6 +397,13 @@
 
         <div class="pagination__buttons">
             
+            <span class="button previous">
+                <a href="https://achi-kyw.github.io/posts/2026/02/%E5%8F%B0%E5%A4%A7%E8%B3%87%E5%B7%A5-114-%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E4%BF%AE%E8%AA%B2%E5%9B%9E%E9%A1%A7/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">台大資工 114 學年度第一學期修課回顧</span>
+                </a>
+            </span>
+            
 
             
             <span class="button next">
@@ -399,9 +422,11 @@
         <div id="comments">
           <div id="disqus_thread"></div>
 <script>
-    window.disqus_config = function () {
+    var disqus_config = function () {
     
     
+    
+        this.page.url = 'https:\/\/achi-kyw.github.io\/posts\/2025\/09\/%E5%9C%A8-pixel-%E6%89%8B%E6%A9%9F%E5%AE%89%E8%A3%9D-suica-%E5%80%8B%E4%BA%BA%E7%B6%93%E9%A9%97%E7%B4%80%E9%8C%84\/';
     
     };
     (function() {
@@ -416,7 +441,6 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </div>
       
     
@@ -458,7 +482,7 @@
 
 
 
-<script type="text/javascript" src="https://achi-kyw.github.io/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+<script type="text/javascript" src="https://achi-kyw.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
 
 
 
