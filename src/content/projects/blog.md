@@ -1,5 +1,5 @@
 ---
-title: 個人部落格
+title: Personal Blog
 tech: [Hugo]
 links:
   - label: Blog
