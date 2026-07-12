@@ -1,0 +1,85 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import Icon from './Icon.astro';
+import { ICONS } from '../lib/icons';
+
+const items = [
+  { label: 'About', href: '/about/', icon: ICONS.person },
+  { label: 'Project', href: '/projects/', icon: ICONS.code },
+  { label: 'Contact', href: '/contact/', icon: ICONS.mail },
+  { label: 'Blog', href: '/blog/', icon: ICONS.article },
+  { label: 'Resume', href: '/resume/', icon: ICONS.description },
+];
+
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isActive = (href: string) =>
+  (href.replace(/\/+$/, '') || '/') === current;
+---
+
+<!-- 頂欄:手機版左上漢堡 + logo,右上亮暗切換(桌面隱藏) -->
+<header class="top-bar">
+  <div class="top-bar-left">
+    <button class="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-drawer">
+      <Icon path={ICONS.menu} size={24} />
+    </button>
+    <a class="bar-logo" href="/" aria-label="回首頁">
+      <Icon path={ICONS.home} size={24} />
+    </a>
+  </div>
+  <ThemeToggle />
+</header>
+
+<!-- 桌面版左側 navigation rail -->
+<nav class="nav-rail" aria-label="主導覽">
+  <a class="rail-logo" href="/" aria-label="回首頁">
+    <Icon path={ICONS.home} size={26} />
+  </a>
+  <div class="rail-items">
+    {items.map((item) => (
+      <a class:list={['nav-item', { active: isActive(item.href) }]} href={item.href}>
+        <span class="icon-pill">
+          <Icon path={item.icon} />
+        </span>
+        <span class="nav-label">{item.label}</span>
+      </a>
+    ))}
+  </div>
+  <div class="rail-bottom">
+    <ThemeToggle />
+  </div>
+</nav>
+
+<!-- 手機版 modal navigation drawer -->
+<div class="drawer" id="nav-drawer">
+  <div class="scrim"></div>
+  <nav class="panel" aria-label="主選單">
+    <a class="drawer-logo" href="/">Achi_kyw</a>
+    {items.map((item) => (
+      <a class:list={['drawer-item', { active: isActive(item.href) }]} href={item.href}>
+        <Icon path={item.icon} />
+        <span>{item.label}</span>
+      </a>
+    ))}
+  </nav>
+</div>
+
+<script>
+  const drawer = document.getElementById('nav-drawer');
+  const btn = document.querySelector<HTMLButtonElement>('.menu-btn');
+
+  const setOpen = (open: boolean) => {
+    drawer?.classList.toggle('open', open);
+    btn?.setAttribute('aria-expanded', String(open));
+  };
+
+  btn?.addEventListener('click', () =>
+    setOpen(!drawer?.classList.contains('open'))
+  );
+  drawer?.querySelector('.scrim')?.addEventListener('click', () => setOpen(false));
+  drawer?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false))
+  );
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+</script>

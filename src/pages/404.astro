@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="404 Not Found | Achi_kyw">
+  <!-- 部落格已搬到 /blog/,舊的文章網址自動轉過去 -->
+  <script is:inline>
+    (function () {
+      var p = location.pathname;
+      if (/^\/(posts|tags|categories|page)(\/|$)/.test(p) || /^\/(index|sitemap)\.xml$/.test(p)) {
+        location.replace('/blog' + p + location.search + location.hash);
+      }
+    })();
+  </script>
+  <header class="page-hero">
+    <h1>404 — Not Found</h1>
+    <p class="subtitle">
+      If you followed an old blog link, you'll be redirected automatically.
+      Otherwise, what you're looking for might be on the
+      <a href="/blog/">Blog</a> or the <a href="/">home page</a>.
+    </p>
+  </header>
+</Base>

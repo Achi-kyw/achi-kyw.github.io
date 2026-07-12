@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const entries = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const projects = await Promise.all(
+  entries.map(async (entry) => ({
+    ...entry.data,
+    Content: (await render(entry)).Content,
+  }))
+);
+---
+
+<Base title="Project | Achi_kyw">
+  <header class="page-hero">
+    <h1>Project</h1>
+  </header>
+
+  <section>
+    <div class="project-grid">
+      {projects.map((p) => <ProjectCard {...p} />)}
+    </div>
+  </section>
+</Base>

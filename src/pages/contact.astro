@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { ICONS } from '../lib/icons';
+
+const contacts = [
+  {
+    label: 'Email',
+    value: 'achisereter19@gmail.com',
+    href: 'mailto:achisereter19@gmail.com',
+    icon: ICONS.mail,
+  },
+  {
+    label: 'GitHub',
+    value: 'Achi-kyw',
+    href: 'https://github.com/Achi-kyw',
+    icon: ICONS.github,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Yu-Wei Kuan',
+    href: 'https://linkedin.com/in/yu-wei-kuan-6372a32b1',
+    icon: ICONS.linkedin,
+  },
+  {
+    label: 'Discord',
+    value: 'Achi_kyw',
+    href: 'https://discord.com/users/614327736583979013',
+    icon: ICONS.discord,
+  },
+];
+---
+
+<Base title="Contact | Achi_kyw">
+  <header class="page-hero">
+    <h1>Contact</h1>
+  </header>
+
+  <section>
+    <div class="contact-list">
+      {contacts.map((c) => (
+        <a class="contact-card" href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener">
+          <span class="icon-pill">
+            <Icon path={c.icon} />
+          </span>
+          <span>
+            <strong>{c.label}</strong>
+            <span class="contact-value">{c.value}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

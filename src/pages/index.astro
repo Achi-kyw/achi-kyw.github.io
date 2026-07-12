@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { ICONS } from '../lib/icons';
+
+const links = [
+  { label: 'About', href: '/about/', icon: ICONS.person, style: 'filled' },
+  { label: 'Project', href: '/projects/', icon: ICONS.code, style: 'tonal' },
+  { label: 'Contact', href: '/contact/', icon: ICONS.mail, style: 'tonal' },
+  { label: 'Blog', href: '/blog/', icon: ICONS.article, style: 'outlined' },
+];
+---
+
+<Base>
+  <section class="hero hero-lg">
+    <h1>Achi_kyw's Personal Page</h1>
+    <p class="subtitle">A CS student at NTU and a software developer</p>
+    <div class="links">
+      {links.map((l) => (
+        <a class={`btn ${l.style}`} href={l.href}>
+          <Icon path={l.icon} size={20} />
+          {l.label}
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

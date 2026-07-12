@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+// 之後把 PDF 放到 public/resume.pdf,然後把下面的佔位區塊換成:
+// <object data="/resume.pdf" type="application/pdf" class="resume-viewer">
+//   <a class="btn filled" href="/resume.pdf">下載 Resume(PDF)</a>
+// </object>
+---
+
+<Base title="Resume | Achi_kyw">
+  <header class="page-hero">
+    <h1>Resume</h1>
+  </header>
+
+  <section>
+    <div class="resume-placeholder">
+      <p>To be filled</p>
+    </div>
+  </section>
+</Base>

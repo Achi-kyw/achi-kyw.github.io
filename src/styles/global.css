@@ -1,0 +1,995 @@
+/* ============================================================
+   Material Design 3 tokens
+   色票採 M3 baseline scheme(https://m3.material.io/styles/color)
+   亮色為預設,html.dark 覆蓋為暗色
+   ============================================================ */
+:root {
+  --primary: #6750a4;
+  --on-primary: #ffffff;
+  --primary-container: #eaddff;
+  --on-primary-container: #4f378b;
+  --secondary: #625b71;
+  --on-secondary: #ffffff;
+  --secondary-container: #e8def8;
+  --on-secondary-container: #4a4458;
+  --surface: #fef7ff;
+  --surface-container-low: #f7f2fa;
+  --surface-container: #f3edf7;
+  --surface-container-high: #ece6f0;
+  --surface-container-highest: #e6e0e9;
+  --on-surface: #1d1b20;
+  --on-surface-variant: #49454f;
+  --outline: #79747e;
+  --outline-variant: #cac4d0;
+  --shadow: rgba(0, 0, 0, 0.15);
+  color-scheme: light;
+}
+
+html.dark {
+  --primary: #d0bcff;
+  --on-primary: #381e72;
+  --primary-container: #4f378b;
+  --on-primary-container: #eaddff;
+  --secondary: #ccc2dc;
+  --on-secondary: #332d41;
+  --secondary-container: #4a4458;
+  --on-secondary-container: #e8def8;
+  --surface: #141218;
+  --surface-container-low: #1d1b20;
+  --surface-container: #211f26;
+  --surface-container-high: #2b2930;
+  --surface-container-highest: #36343b;
+  --on-surface: #e6e0e9;
+  --on-surface-variant: #cac4d0;
+  --outline: #938f99;
+  --outline-variant: #49454f;
+  --shadow: rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+:root {
+  --elevation-1: 0 1px 2px var(--shadow), 0 1px 3px 1px var(--shadow);
+  --elevation-2: 0 1px 2px var(--shadow), 0 2px 6px 2px var(--shadow);
+  /* M3 state layer:hover 疊 8% 的 on-surface */
+  --hover-layer: color-mix(in srgb, var(--on-surface) 8%, transparent);
+  --rail-width: 96px;
+  /* M3 Expressive spatial spring 的近似曲線(帶回彈) */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   M3 按壓回饋
+   1) Ripple:pressed state layer 從點擊點擴散(JS 產生 .ripple)
+   2) Shape morph:膠囊按住時圓角收緊,放開用彈簧彈回
+   ============================================================ */
+.btn,
+.theme-toggle,
+.menu-btn,
+.project-card,
+.contact-card,
+.drawer-item,
+.rail-logo,
+.bar-logo,
+.icon-pill,
+.chips span {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.12;
+  pointer-events: none;
+  transform: scale(0);
+  animation:
+    ripple-grow 0.45s cubic-bezier(0.2, 0, 0, 1) forwards,
+    ripple-fade 0.4s ease 0.3s forwards;
+}
+
+@keyframes ripple-grow {
+  to { transform: scale(1); }
+}
+
+@keyframes ripple-fade {
+  to { opacity: 0; }
+}
+
+/* ---- shape morph:按住收緊、放開回彈 ---- */
+.btn:active {
+  border-radius: 12px;
+}
+
+.nav-item:active .icon-pill {
+  border-radius: 8px;
+}
+
+.menu-btn:active,
+.rail-logo:active,
+.bar-logo:active {
+  border-radius: 12px;
+}
+
+.drawer-item:active {
+  border-radius: 14px;
+}
+
+/* 按住時快速收緊(放開才走彈簧曲線回彈) */
+.btn:active,
+.nav-item:active .icon-pill,
+.menu-btn:active,
+.rail-logo:active,
+.bar-logo:active,
+.drawer-item:active {
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+/* 卡片按壓:elevation 壓平 + 微縮 */
+.project-card:active,
+.contact-card:active {
+  box-shadow: none;
+  transform: scale(0.98);
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple {
+    display: none;
+  }
+
+  .btn,
+  .icon-pill,
+  .theme-toggle,
+  .theme-toggle svg,
+  .menu-btn,
+  .rail-logo,
+  .bar-logo,
+  .drawer-item,
+  .project-card,
+  .contact-card,
+  .entry-body,
+  .entry-icon,
+  .chips span {
+    transition: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--surface);
+  color: var(--on-surface);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   Navigation rail(M3:https://m3.material.io/components/navigation-rail)
+   桌面靠左直排,行動版轉為底部 navigation bar
+   ============================================================ */
+.nav-rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--rail-width);
+  background: var(--surface-container);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  z-index: 10;
+}
+
+.rail-logo {
+  color: var(--on-surface);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: background 0.15s ease, border-radius 0.35s var(--spring);
+}
+
+.rail-logo:hover {
+  text-decoration: none;
+  background: var(--hover-layer);
+}
+
+.rail-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--on-surface-variant);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.nav-item:hover {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+
+/* 膠囊形的 active indicator,hover 時鋪 state layer */
+.icon-pill {
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-radius 0.35s var(--spring);
+}
+
+.nav-item:hover .icon-pill {
+  background: var(--hover-layer);
+}
+
+.nav-item.active {
+  color: var(--on-surface);
+}
+
+.nav-item.active .icon-pill {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.nav-item.active:hover .icon-pill {
+  background: color-mix(in srgb, var(--on-secondary-container) 8%, var(--secondary-container));
+}
+
+.rail-bottom {
+  margin-top: auto;
+}
+
+/* ============================================================
+   頂欄:只在手機版出現的 top app bar
+   (左上漢堡 + logo,右上亮暗切換)
+   ============================================================ */
+.top-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 15;
+  background: var(--surface-container);
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menu-btn {
+  border: none;
+  background: transparent;
+  color: var(--on-surface);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s ease, border-radius 0.35s var(--spring);
+}
+
+.menu-btn:hover {
+  background: var(--hover-layer);
+}
+
+.bar-logo {
+  color: var(--on-surface);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-radius 0.35s var(--spring);
+}
+
+.bar-logo:hover {
+  text-decoration: none;
+  background: var(--hover-layer);
+}
+
+/* ============================================================
+   Modal navigation drawer(手機版漢堡選單展開)
+   ============================================================ */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  visibility: hidden;
+  transition: visibility 0.25s;
+}
+
+.drawer.open {
+  visibility: visible;
+}
+
+.drawer .scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.drawer.open .scrim {
+  opacity: 1;
+}
+
+.drawer .panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(80vw, 300px);
+  background: var(--surface-container-low);
+  border-radius: 0 16px 16px 0;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+
+.drawer.open .panel {
+  transform: none;
+}
+
+.drawer-logo {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-weight: 700;
+  color: var(--on-surface);
+  padding: 12px 16px 20px;
+}
+
+.drawer-logo:hover {
+  text-decoration: none;
+}
+
+/* M3 drawer item:56px 高、全圓角膠囊 */
+.drawer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 28px;
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-radius 0.35s var(--spring);
+}
+
+.drawer-item:hover {
+  text-decoration: none;
+  background: var(--hover-layer);
+  color: var(--on-surface);
+}
+
+.drawer-item.active {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+/* ---- 主題切換:M3 outlined icon button ----
+   兩顆圖示疊在按鈕裡上下滑動:
+   切到暗色 = 月亮升出頂部、太陽從底下升起(日出)
+   切回亮色 = 太陽沉下去、月亮從上面降回來(日落) */
+.theme-toggle {
+  border: 1px solid var(--outline);
+  background: transparent;
+  color: var(--on-surface-variant);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    border-radius 0.35s var(--spring);
+}
+
+.theme-toggle:hover {
+  background: var(--hover-layer);
+  border-color: var(--on-surface-variant);
+}
+
+.theme-toggle svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  transition: transform 0.45s var(--spring), opacity 0.25s ease;
+}
+
+.theme-toggle .icon-moon {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.theme-toggle .icon-sun {
+  transform: translateY(175%);
+  opacity: 0;
+}
+
+html.dark .theme-toggle .icon-moon {
+  transform: translateY(-175%);
+  opacity: 0;
+}
+
+html.dark .theme-toggle .icon-sun {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ---- 內容區讓出 rail 的寬度 ---- */
+.page {
+  margin-left: var(--rail-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page main {
+  flex: 1;
+  width: 100%;
+}
+
+/* ============================================================
+   Hero 與頁面標題
+   ============================================================ */
+.hero {
+  padding: 88px 0 32px;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.hero .subtitle {
+  color: var(--on-surface-variant);
+  font-size: 1.05rem;
+  margin: 0 0 28px;
+}
+
+.hero .links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- M3 buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: box-shadow 0.15s ease, background 0.15s ease,
+    border-radius 0.35s var(--spring);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn.filled {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn.filled:hover {
+  box-shadow: var(--elevation-1);
+  background: color-mix(in srgb, var(--on-primary) 8%, var(--primary));
+}
+
+.btn.tonal {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.btn.tonal:hover {
+  box-shadow: var(--elevation-1);
+  background: color-mix(in srgb, var(--on-secondary-container) 8%, var(--secondary-container));
+}
+
+.btn.outlined {
+  border: 1px solid var(--outline);
+  color: var(--primary);
+}
+
+.btn.outlined:hover {
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+}
+
+/* ============================================================
+   區塊
+   ============================================================ */
+section {
+  padding: 24px 0;
+}
+
+/* 比照 m3.material.io 的區塊標題(如 Announcements):
+   headline 級大小、medium 字重 */
+section h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+
+.entry-body .period {
+  color: var(--on-surface-variant);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.entry-body h3 {
+  margin: 2px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.entry-body .org {
+  color: var(--on-surface-variant);
+  font-size: 0.95rem;
+}
+
+.entry-body .desc {
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.entry-body .desc p {
+  margin: 0 0 6px;
+}
+
+.entry-body .desc ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.entry-body .desc li {
+  margin: 0 0 4px;
+}
+
+/* ============================================================
+   時間軸:左側直線,節點用圓形 icon(公司/學校 logo 或預設圖示)
+   ============================================================ */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline > li {
+  position: relative;
+  padding: 4px 0 28px 64px;
+}
+
+.timeline > li:last-child {
+  padding-bottom: 8px;
+}
+
+/* hover 的灰色方塊只蓋右側內容區,左緣避開 icon */
+.timeline .entry-body {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 16px 12px;
+  border-radius: 16px;
+  transition: background 0.15s ease;
+}
+
+/* 游標在整條(icon 或內容區)上:內容區變灰、icon 同步凸顯 */
+.timeline > li:hover .entry-body {
+  background: var(--hover-layer);
+}
+
+.timeline > li:active .entry-body {
+  background: color-mix(in srgb, var(--on-surface) 12%, transparent);
+}
+
+.timeline > li:hover .entry-icon {
+  transform: scale(1.1);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+/* 時間軸的線:畫在 li 內部,穿過 icon 背後 */
+.timeline > li::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--outline-variant);
+}
+
+.timeline > li:first-child::before {
+  top: 28px;
+}
+
+.timeline > li:last-child::before {
+  bottom: auto;
+  height: 28px;
+}
+
+/* icon 節點:置中壓在時間軸的線上 */
+.timeline .entry-icon {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  outline: 4px solid var(--surface);
+  transition: transform 0.25s var(--spring), background 0.15s ease,
+    color 0.15s ease;
+}
+
+.timeline .entry-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   作品集:M3 filled card,hover 變色 + 浮起
+   ============================================================ */
+/* 一排一個,卡片橫向佔滿 */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.project-card {
+  background: var(--surface-container-highest);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.15s ease, background 0.15s ease,
+    transform 0.3s var(--spring);
+}
+
+.project-card:hover {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface-container-highest));
+  box-shadow: var(--elevation-2);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.project-card .desc {
+  color: var(--on-surface-variant);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.project-card .desc p {
+  margin: 0 0 6px;
+}
+
+.project-card .desc p:last-child {
+  margin-bottom: 0;
+}
+
+.project-card .tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-card .tech span {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--outline-variant);
+  border-radius: 8px;
+  color: var(--on-surface-variant);
+}
+
+/* ---- Skills 分組 ---- */
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0 0 10px;
+  color: var(--on-surface);
+}
+
+/* ---- 通用 chips(About 頁 Skills 等) ---- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips span {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--outline-variant);
+  border-radius: 8px;
+  color: var(--on-surface-variant);
+  transition: background 0.15s ease;
+}
+
+.chips span:hover {
+  background: var(--hover-layer);
+}
+
+.project-card .card-links {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Contact:列表卡片,hover 變色
+   ============================================================ */
+/* 一排一個,卡片橫向佔滿 */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface-container);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--on-surface);
+  transition: background 0.15s ease, box-shadow 0.15s ease,
+    transform 0.3s var(--spring);
+}
+
+.contact-card:hover {
+  text-decoration: none;
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface-container));
+  box-shadow: var(--elevation-1);
+}
+
+.contact-card .icon-pill {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  flex-shrink: 0;
+}
+
+.contact-card strong {
+  display: block;
+  font-weight: 500;
+}
+
+.contact-value {
+  color: var(--on-surface-variant);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   Resume 佔位
+   ============================================================ */
+.resume-placeholder {
+  background: var(--surface-container);
+  border-radius: 12px;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--on-surface-variant);
+  transition: background 0.15s ease;
+}
+
+.resume-placeholder:hover {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface-container));
+}
+
+.resume-viewer {
+  width: 100%;
+  height: 80vh;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  background: var(--surface-container);
+  margin-top: 56px;
+  padding: 20px 0;
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* footer 一行放得下:不受內文 860px 寬限制 */
+.site-footer .container {
+  max-width: none;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+.footer-sep {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.footer-credits {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   首頁大字版 hero:垂直置中填滿版面,字體與按鈕放大
+   (M3 Expressive 的 large button:56px 高、28px 圓角)
+   ============================================================ */
+/* 讓 hero 撐滿「視窗扣掉 footer」的高度,內容真正上下置中 */
+.page main:has(.hero-lg) {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-lg {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+/* 比照 m3.material.io 首頁的巨型 display 標題:
+   隨視窗寬度縮放、行高收緊、semi-bold */
+.hero-lg h1,
+.page-hero h1 {
+  font-size: clamp(2.75rem, 7vw, 6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+}
+
+/* 比照 m3.material.io 首頁的 description:
+   接近正文色的大號敘述文字、限制行寬 */
+.hero-lg .subtitle,
+.page-hero .subtitle {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--on-surface);
+  max-width: 75ch;
+  margin: 0 0 40px;
+}
+
+/* 內頁的 hero 區(About 等):不做整頁置中,只有大標 + 敘述 */
+.page-hero {
+  padding: 72px 0 8px;
+}
+
+.hero-lg .links {
+  gap: 16px;
+}
+
+/* M3 Expressive medium button 規格:56px 高、左右 padding 24dp */
+.hero-lg .btn {
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 28px;
+  font-size: 1.05rem;
+}
+
+.hero-lg .btn:active {
+  border-radius: 16px;
+}
+
+@media (max-width: 700px) {
+  .hero-lg .subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+/* ============================================================
+   行動版:隱藏 rail,改用 top app bar + 漢堡選單開 drawer
+   ============================================================ */
+@media (max-width: 700px) {
+  .nav-rail {
+    display: none;
+  }
+
+  .top-bar {
+    display: flex;
+  }
+
+  .page {
+    margin-left: 0;
+    padding-top: 64px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+}

@@ -1,0 +1,114 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { ICONS } from '../lib/icons';
+
+const entries = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const withContent = await Promise.all(
+  entries.map(async (entry) => ({
+    ...entry.data,
+    Content: (await render(entry)).Content,
+  }))
+);
+
+const sections = [
+  {
+    id: 'work',
+    title: 'Work Experience',
+    items: withContent.filter((e) => e.type === 'work'),
+    defaultIcon: ICONS.work,
+  },
+  {
+    id: 'education',
+    title: 'Education',
+    items: withContent.filter((e) => e.type === 'education'),
+    defaultIcon: ICONS.school,
+  },
+  {
+    id: 'activities',
+    title: 'Activities',
+    items: withContent.filter((e) => e.type === 'activity'),
+    defaultIcon: ICONS.star,
+  },
+];
+
+const skillGroups = [
+  {
+    label: 'Language',
+    items: ['English (TOEIC 920/990)', 'Mandarin Chinese (Native)', 'Japanese (Beginner)'],
+  },
+  {
+    label: 'Programming Language',
+    items: ['C/C++', 'Python', 'TypeScript', 'JavaScript', 'Node.js', 'React', 'Next.js'],
+  },
+  {
+    label: 'Algorithms',
+    items: ['Problem Solving', 'Mathematical Thinking'],
+  },
+  {
+    label: 'Machine Learning',
+    items: ['Figure Generation', 'Predictive Analytics', 'Neural Network', 'TensorFlow', 'PyTorch'],
+  },
+  {
+    label: 'Other',
+    items: ['Website', 'Network', 'System', 'Cryptography'],
+  },
+];
+---
+
+<Base title="About | Achi_kyw">
+  <header class="page-hero">
+    <h1>About</h1>
+    <p class="subtitle">
+      I'm Yu-Wei Kuan, a CS student at NTU, currently a member of Shou-De Lin's <a href="https://mslab.csie.ntu.edu.tw/">MSLab</a>.
+    </p>
+  </header>
+
+  {sections.map(({ id, title, items, defaultIcon }) => (
+    <section id={id}>
+      <h2>{title}</h2>
+      <ul class="timeline">
+        {items.map(({ title: t, org, orgLink, start, end, icon, Content }) => (
+          <li>
+            <span class="entry-icon">
+              {icon ? (
+                <Image src={icon} alt={org} width={96} height={96} loading="lazy" />
+              ) : (
+                <Icon path={defaultIcon} />
+              )}
+            </span>
+            <div class="entry-body">
+              <div class="period">{start}{end && ` — ${end}`}</div>
+              <h3>{t}</h3>
+              <div class="org">
+                {orgLink ? (
+                  <a href={orgLink} target="_blank" rel="noopener">{org}</a>
+                ) : (
+                  org
+                )}
+              </div>
+              <div class="desc"><Content /></div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <section id="skills">
+    <h2>Skills</h2>
+    {skillGroups.map(({ label, items }) => (
+      <div class="skill-group">
+        <h3>{label}</h3>
+        <div class="chips">
+          {items.map((s) => <span>{s}</span>)}
+        </div>
+      </div>
+    ))}
+  </section>
+</Base>

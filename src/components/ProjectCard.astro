@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  tech: string[];
+  links: { label: string; url: string; style: 'filled' | 'tonal' | 'outlined' }[];
+  Content: any;
+}
+
+const { title, tech, links, Content } = Astro.props;
+---
+
+<article class="project-card">
+  <h3>{title}</h3>
+  <div class="desc"><Content /></div>
+  {tech.length > 0 && (
+    <div class="tech">
+      {tech.map((t) => <span>{t}</span>)}
+    </div>
+  )}
+  {links.length > 0 && (
+    <div class="card-links">
+      {links.map((l) => (
+        <a class={`btn ${l.style}`} href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>
+      ))}
+    </div>
+  )}
+</article>
