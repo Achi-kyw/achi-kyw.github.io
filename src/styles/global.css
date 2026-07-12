@@ -954,8 +954,27 @@ section h2 {
   padding: 72px 0 8px;
 }
 
-.hero-lg .links {
-  gap: 16px;
+/* M3 Expressive connected button group:
+   2px 間距、外側角全圓、內側角 8px,按下的那顆 morph 成全圓 */
+.hero-lg .btn-group {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.hero-lg .btn-group .btn {
+  border-radius: 8px;
+}
+
+.hero-lg .btn-group .btn:first-child {
+  border-radius: 28px 8px 8px 28px;
+}
+
+.hero-lg .btn-group .btn:last-child {
+  border-radius: 8px 28px 28px 8px;
+}
+
+.hero-lg .btn-group .btn:active {
+  border-radius: 28px;
 }
 
 /* M3 Expressive medium button 規格:56px 高、左右 padding 24dp */
@@ -974,6 +993,23 @@ section h2 {
   .hero-lg .subtitle {
     font-size: 1.15rem;
   }
+
+  .hero-lg .btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .hero-lg .btn-group .btn {
+    justify-content: center;
+  }
+
+  .hero-lg .btn-group .btn:first-child { border-radius: 28px 8px 8px 8px; }
+  .hero-lg .btn-group .btn:nth-child(2) { border-radius: 8px 28px 8px 8px; }
+  .hero-lg .btn-group .btn:nth-child(3) { border-radius: 8px 8px 8px 28px; }
+  .hero-lg .btn-group .btn:last-child { border-radius: 8px 8px 28px 8px; }
+
+  .hero-lg .btn-group .btn:active { border-radius: 28px; }
 }
 
 /* ============================================================
