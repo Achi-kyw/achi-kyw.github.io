@@ -71,7 +71,7 @@ html.dark {
 .rail-logo,
 .bar-logo,
 .icon-pill,
-.chips span {
+.chips > span {
   position: relative;
   overflow: hidden;
 }
@@ -152,7 +152,7 @@ html.dark {
   .contact-card,
   .entry-body,
   .entry-icon,
-  .chips span {
+  .chips > span {
     transition: none;
   }
 }
@@ -163,6 +163,9 @@ html.dark {
 
 html {
   scroll-behavior: smooth;
+  /* 過捲(橡皮筋)露出的畫布 = html 背景,設成 footer 色;
+     body 自己蓋 --surface,只有超出頁面的區域會露出這個顏色 */
+  background: var(--surface-container);
 }
 
 body {
@@ -729,13 +732,13 @@ section h2 {
 
 .project-card h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 .project-card .desc {
   color: var(--on-surface-variant);
-  font-size: 0.9rem;
+  font-size: 1rem;
   flex: 1;
 }
 
@@ -756,9 +759,9 @@ section h2 {
 .project-card .tech span {
   display: inline-flex;
   align-items: center;
-  height: 28px;
+  height: 30px;
   padding: 0 12px;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid var(--outline-variant);
   border-radius: 8px;
@@ -784,7 +787,7 @@ section h2 {
   gap: 8px;
 }
 
-.chips span {
+.chips > span {
   display: inline-flex;
   align-items: center;
   height: 32px;
@@ -797,7 +800,7 @@ section h2 {
   transition: background 0.15s ease;
 }
 
-.chips span:hover {
+.chips > span:hover {
   background: var(--hover-layer);
 }
 
@@ -844,12 +847,13 @@ section h2 {
 
 .contact-card strong {
   display: block;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 .contact-value {
   color: var(--on-surface-variant);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* ============================================================
