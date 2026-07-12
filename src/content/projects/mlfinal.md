@@ -8,4 +8,4 @@ links:
 order: 17
 ---
 
-Final Project of the Machine Learning course.
+Final Project of the Machine Learning course. (in Mandarin)

@@ -7,10 +7,13 @@ interface Props {
   description?: string;
 }
 
-const {
-  title = 'Achi_kyw',
-  description = 'Achi_kyw 的個人網站:經歷與作品集',
-} = Astro.props;
+const SITE_NAME = "Achi_kyw's website";
+
+const { title, description = "Achi_kyw's personal website — experience, projects, and blog." } =
+  Astro.props;
+
+// 頁面只傳區塊名(如 "About"),後綴統一在這裡加
+const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
 ---
 
 <!doctype html>
@@ -18,7 +21,7 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
