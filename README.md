@@ -9,3 +9,7 @@ npm run build    # Build to dist/
 ```
 
 Push to `master` to deploy
+
+## Resume
+
+The Resume navigation item opens `/resume.pdf` directly in the current tab. `public/resume.pdf` is the general resume combining software engineering and research content; replace it with the latest general version when updating. The old `/resume/` route redirects to the PDF.
