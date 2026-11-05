@@ -7,4 +7,4 @@ order: 4
 type: education
 icon: ../../assets/icons/ntu.jpeg
 ---
-MSLab · Advisor: Shou-De Lin · Research: Brain LLMs
+MSLab · Advisor: Shou-De Lin · Research: VLM auto tagging with sales agent pipeline
