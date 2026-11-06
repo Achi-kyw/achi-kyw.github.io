@@ -1,5 +1,5 @@
 ---
-title: Master, Computer Science and Information Engineering
+title: Master of Science (M.S.) in Computer Science and Information Engineering
 org: National Taiwan University
 start: "2026.09"
 end: "Present"

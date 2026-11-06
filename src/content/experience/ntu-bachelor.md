@@ -1,5 +1,5 @@
 ---
-title: BSc, Computer Science and Information Engineering
+title: Bachelor of Science (B.S.) in Computer Science and Information Engineering
 org: National Taiwan University
 start: "2022.09"
 end: "2026.06"
